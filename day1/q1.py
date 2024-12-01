@@ -9,17 +9,13 @@ with open('ids.txt') as f:
 
 pairs = []
 for i in range(1000):
-    xmin = min(list1)
-    ymin = min(list2)
-    pairs.append((xmin, ymin))
-    list1.remove(xmin)
-    list2.remove(ymin)
+    pairs.append((min(list1), min(list2)))
+    list1.remove(min(list1))
+    list2.remove(min(list2))
 
 distances = []
 for pair in pairs:
-    x = int(pair[0])
-    y = int(pair[1])
-    distance = abs(x - y)
+    distance = abs(int(pair[0]) - int(pair[1]))
     distances.append(distance)
 
 total = sum(distances)

@@ -33,6 +33,7 @@ def formatting(item):
 for piece in toMul:
     formatting(piece)
 
+
 for item in furtherInspection:
     if "do" in item:
         if "don't" in item:
@@ -42,8 +43,11 @@ for item in furtherInspection:
     formatting(item)
 
 total = 0
-for i, nums in enumerate(multiply):
+for nums in multiply:
     nums = nums.split(',')
+    if len(nums) == 2:
+        num1, num2 = map(int, nums)
+        total += num1 * num2
     try:
         num1 = int(nums[0])
         num2 = int(nums[1])

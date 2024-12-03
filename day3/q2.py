@@ -36,11 +36,10 @@ for piece in toMul:
 for item in furtherInspection:
     if "do" in item:
         if "don't" in item:
-            item = item.split("don't")
-            formatting(item[0])
+            item = item.split("don't")[0]
         else:
-            item = item.split("do")
-            formatting(item[1])
+            item = item.split("do")[1]
+    formatting(item)
 
 total = 0
 for i, nums in enumerate(multiply):
